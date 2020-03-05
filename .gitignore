@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 
-#ReactNodeNew Modules
+#BackendApp Modules
 /BackendApp/node_modules
 
 # testing

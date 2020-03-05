@@ -16,6 +16,8 @@ import "./layouts.css";
 import Button from "@material-ui/core/Button";
 //Fonts-typography
 import Typography from "@material-ui/core/Typography";
+//Router-dom imports
+import { Link } from "react-router-dom";
 
 const styles = {
   Paper: {
@@ -95,9 +97,11 @@ const Content = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="medium" color="primary">
-                  Create a new Consult
-                </Button>
+                <Link to="/consults" style={{ textDecoration: 'none' }}>
+                  <Button size="medium" color="primary">
+                    Create a new Consult
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Paper>
