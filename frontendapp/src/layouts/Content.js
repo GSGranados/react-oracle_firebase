@@ -92,7 +92,7 @@ const Content = () => {
                   >
                     Maybe there is a lot of consults and it is a pain in the
                     neck to go check on Support U between all the features. It
-                    is better to have them in just one place!
+                    is better to have them in just one place! Better be cautious.
                   </Typography>
                 </CardContent>
               </CardActionArea>
