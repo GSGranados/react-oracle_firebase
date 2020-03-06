@@ -10,7 +10,7 @@ const AdminIssueForm = props => {
         className="inputForm"
         type="text"
         name="domainAffected"
-        placeholder="example@domain.com"
+        placeholder="exampledomain.com"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Domain Admin:{" "}
