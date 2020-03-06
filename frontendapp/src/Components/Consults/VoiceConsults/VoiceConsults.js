@@ -6,12 +6,13 @@ import { Paper } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 
 //Expansion Panel
-import { makeStyles } from '@material-ui/core/styles';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { makeStyles } from "@material-ui/core/styles";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import AdminIssueForm from "../../Forms/VoiceForms/AdminIssueForm";
 
 const styles = {
   Paper: {
@@ -22,22 +23,27 @@ const styles = {
 };
 
 const useStyles = makeStyles(theme => ({
-    root: {
-      width: '100%',
-    },
-    heading: {
-      fontSize: theme.typography.pxToRem(15),
-      flexBasis: '33.33%',
-      flexShrink: 0,
-    },
-    secondaryHeading: {
-      fontSize: theme.typography.pxToRem(15),
-      color: theme.palette.text.secondary,
-    },
-  }));
+  root: {
+    width: "100%"
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    flexBasis: "33.33%",
+    flexShrink: 0
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary
+  }
+}));
 
-const VoiceConsults =() => {
-  
+const VoiceConsults = () => {
+  const consultManager = {
+
+    
+
+  };
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -45,11 +51,21 @@ const VoiceConsults =() => {
     setExpanded(isExpanded ? panel : false);
   };
 
-    return (
-      <div>
-        <Header></Header>
-        <Grid container spacing={2}>
-        <div className={classes.root} style={{ padding: 25, marginTop: 20, marginBottom: 20 }}>
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const domainAffected = e.target.elements.domainAffected.value;
+    console.log(domainAffected);
+  };
+
+  return (
+    <div>
+      <Header></Header>
+      <Grid container spacing={2}>
+        <div
+          className={classes.root}
+          style={{ padding: 25, marginTop: 20, marginBottom: 20 }}
+        >
           <ExpansionPanel
             expanded={expanded === "panel1"}
             onChange={handleChange("panel1")}
@@ -60,17 +76,19 @@ const VoiceConsults =() => {
               id="panel1bh-header"
             >
               <Typography className={classes.heading}>
-                General settings
+                Admin Issue Consult
               </Typography>
               <Typography className={classes.secondaryHeading}>
-                I am an expansion panel
+                This consult can be used when some Admins are having problems
+                with Service Management Settings (unexpected behaviors).
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
-                Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-                feugiat. Aliquam eget maximus est, id dignissim quam.
-              </Typography>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <AdminIssueForm handleSubmit={handleSubmit}></AdminIssueForm>
+                </Paper>
+              </Grid>
             </ExpansionPanelDetails>
           </ExpansionPanel>
           <ExpansionPanel
@@ -139,10 +157,9 @@ const VoiceConsults =() => {
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </div>
-        </Grid>
-      </div>
-    );
-  
-}
+      </Grid>
+    </div>
+  );
+};
 
 export default VoiceConsults;

@@ -1,0 +1,42 @@
+.inputForm {
+
+    width: 95%;
+    margin: 10px;
+    height: 25px;
+    padding: 7px 10px;
+    border: 1px solid black ;
+    transition: 0.4s;
+
+}
+
+.inputForm:focus{
+
+    background-color: rgb(236, 228, 216);
+}
+
+.labelForm{
+
+    font-weight: bold;
+}
+
+.textAreaForm{
+
+    height: 55px;
+
+}
+
+.form_button{
+
+    background-color: cornflowerblue;
+    color: white;
+    margin-top: 5px;
+    padding: 15px 32px;
+    border-radius: .5rem;
+    border: none;
+    transition: 0.45s;
+    transition-timing-function: ease-in-out;
+}
+
+.form_button:hover{
+    background-color: blueviolet;
+}
