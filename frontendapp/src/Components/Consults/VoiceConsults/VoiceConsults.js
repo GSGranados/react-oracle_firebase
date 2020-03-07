@@ -15,7 +15,10 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 //Forms
 import AdminIssueForm from "../../Forms/VoiceForms/AdminIssueForm";
-import AudioQualityForm from '../../Forms/VoiceForms/AudioQualityForm';
+import AudioQualityForm from "../../Forms/VoiceForms/AudioQualityForm";
+import DeskPhoneForm from "../../Forms/VoiceForms/DeskPhoneForm";
+import FormalComplaintForm from "../../Forms/VoiceForms/FormalComplaintForm";
+import AAForm from "../../Forms/VoiceForms/AAForm";
 
 const styles = {
   Paper: {
@@ -40,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const  VoiceConsults = () => {
+const VoiceConsults = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -76,8 +79,7 @@ const  VoiceConsults = () => {
             <ExpansionPanelDetails>
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
-                  <AdminIssueForm
-                  ></AdminIssueForm>
+                  <AdminIssueForm></AdminIssueForm>
                 </Paper>
               </Grid>
             </ExpansionPanelDetails>
@@ -91,16 +93,18 @@ const  VoiceConsults = () => {
               aria-controls="panel2bh-content"
               id="panel2bh-header"
             >
-              <Typography className={classes.heading}>Audio Quality Issues</Typography>
+              <Typography className={classes.heading}>
+                Audio Quality Issues
+              </Typography>
               <Typography className={classes.secondaryHeading}>
-                Can be used when end user is experimenting poor quality on calls or dropping calls
+                Can be used when end user is experimenting poor quality on calls
+                or dropping calls
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
-                  <AudioQualityForm>
-                  </AudioQualityForm>
+                  <AudioQualityForm></AudioQualityForm>
                 </Paper>
               </Grid>
             </ExpansionPanelDetails>
@@ -115,18 +119,19 @@ const  VoiceConsults = () => {
               id="panel3bh-header"
             >
               <Typography className={classes.heading}>
-                Advanced settings
+                Deskphone Issues
               </Typography>
               <Typography className={classes.secondaryHeading}>
-                Filtering has been entirely disabled for whole web server
+                Report problems related to a Deskphone or request a password
+                from one of them.
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
-                Nunc vitae orci ultricies, auctor nunc in, volutpat nisl.
-                Integer sit amet egestas eros, vitae egestas augue. Duis vel est
-                augue.
-              </Typography>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <DeskPhoneForm></DeskPhoneForm>
+                </Paper>
+              </Grid>
             </ExpansionPanelDetails>
           </ExpansionPanel>
           <ExpansionPanel
@@ -138,14 +143,63 @@ const  VoiceConsults = () => {
               aria-controls="panel4bh-content"
               id="panel4bh-header"
             >
-              <Typography className={classes.heading}>Personal data</Typography>
+              <Typography className={classes.heading}>
+                Formal Complaint
+              </Typography>
+              <Typography className={classes.secondaryHeading}>
+                Report some complaints about the product usage, capabilities or limitations.
+              </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
-                Nunc vitae orci ultricies, auctor nunc in, volutpat nisl.
-                Integer sit amet egestas eros, vitae egestas augue. Duis vel est
-                augue.
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <FormalComplaintForm></FormalComplaintForm>
+                </Paper>
+              </Grid>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            expanded={expanded === "panel5"}
+            onChange={handleChange("panel5")}
+          >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel5h-content"
+              id="panel5bh-header"
+            >
+              <Typography className={classes.heading}>Auto Attendant Issues</Typography>
+              <Typography className={classes.secondaryHeading}>
+                Report problems related to Auto Attendants / Calls placed to an Auto Attendant.
               </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                    <AAForm></AAForm>
+                </Paper>
+              </Grid>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            expanded={expanded === "panel6"}
+            onChange={handleChange("panel6")}
+          >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel6h-content"
+              id="panel5bh-header"
+            >
+              <Typography className={classes.heading}>Mobile Issues (Voice Mail Playback)</Typography>
+              <Typography className={classes.secondaryHeading}>
+                Report problems related to Google Voice Mobile App.
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                    <AAForm></AAForm>
+                </Paper>
+              </Grid>
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </div>

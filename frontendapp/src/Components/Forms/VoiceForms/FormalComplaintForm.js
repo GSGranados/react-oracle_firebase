@@ -4,14 +4,13 @@ import "./voiceForms.css";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-const DeskPhoneForm = () => {
+const FormalComplaintForm = () => {
   const handleSubmitDeskPhone = e => {
     e.preventDefault();
     const domainAffected = e.target.elements.domainAffected.value;
-    const macAddress = e.target.elements.macAddress.value;
-    const serialNumber = e.target.elements.serialNumber.value;
-    const emailUser = e.target.elements.emailUser.value;
-    const numberUser = e.target.elements.numberUser.value;
+    const userName = e.target.elements.userName.value;
+    const phoneNumber = e.target.elements.phoneNumber.value;
+    const countryUser = e.target.elements.countryUser.value;
     const problemForm = e.target.elements.problemForm.value;
     const harScreenForm = e.target.elements.harScreenForm.value;
 
@@ -20,10 +19,9 @@ const DeskPhoneForm = () => {
       icon: "success",
       title: "Consult Generated!",
       html: `<strong>Domain Affected: </strong> ${domainAffected}<br>
-          <strong>MAC Address:</strong> ${macAddress}<br>
-          <strong>Serial Number:</strong> ${serialNumber}<br>
-          <strong>Email Associated to that user:</strong> ${emailUser}<br>
-          <strong>Number Associated to that user:</strong> ${numberUser}<br>
+          <strong>Username being affected:</strong> ${userName}<br>
+          <strong>User's Phone Number:</strong> ${phoneNumber}<br>
+          <strong>Country:</strong> ${countryUser}<br>
           <strong>Problem Summary:</strong> ${problemForm}<br>
           <strong>Screenshots and HARs:</strong> ${harScreenForm}`
     });
@@ -41,40 +39,31 @@ const DeskPhoneForm = () => {
         placeholder="exampledomain.com"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        MAC Addres:{" "}
+        Affected Username:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="macAddress"
-        placeholder="82152543EB0DDA"
+        name="userName"
+        placeholder="user@domain.com"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Serial Number:{" "}
+        Phone Number of that User:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="serialNumber"
-        placeholder="82152543EB0DDA"
+        name="phoneNumber"
+        placeholder="+123456789"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Email Address associated to the user:{" "}
+        Country of the User:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="emailUser"
-        placeholder="user@mail.com"
-      ></input>
-      <label className="labelForm" style={{ display: "block" }}>
-        Number Associated:{" "}
-      </label>
-      <input
-        className="inputForm"
-        type="number"
-        pattern ="[0-9]*"
-        name="numberUser"
+        name="countryUser"
+        placeholder="United States"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Problem Description:{" "}
@@ -101,4 +90,4 @@ const DeskPhoneForm = () => {
   );
 };
 
-export default DeskPhoneForm;
+export default FormalComplaintForm;
