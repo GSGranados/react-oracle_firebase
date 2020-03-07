@@ -4,14 +4,16 @@ import "../styleForms.css";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-const AdminIssueForm = () => {
-  const handleSubmitAdminIssue = e => {
+const AudioVideoForm = () => {
+  const handleSubmitAV = e => {
     e.preventDefault();
     const domainAffected = e.target.elements.domainAffected.value;
-    const domainAdmin = e.target.elements.domainAdmin.value;
-    const urlForm = e.target.elements.urlForm.value;
-    const browserForm = e.target.elements.browserForm.value;
-    const timeForm = e.target.elements.timeForm.value;
+    const meetID = e.target.elements.meetID.value;
+    const usersAffected = e.target.elements.usersAffected.value;
+    const dateTime = e.target.elements.dateTime.value;
+    const testRTC = e.target.elements.testRTC.value;
+    const hangLogs = e.target.elements.hangLogs.value;
+    const audioDump = e.target.elements.audioDump.value;
     const problemForm = e.target.elements.problemForm.value;
     const harScreenForm = e.target.elements.harScreenForm.value;
 
@@ -20,17 +22,19 @@ const AdminIssueForm = () => {
       icon: "success",
       title: "Consult Generated!",
       html: `<strong>Domain Affected: </strong> ${domainAffected}<br>
-      <strong>Domain Admin:</strong> ${domainAdmin}<br>
-      <strong>URL Accessed:</strong> ${urlForm}<br>
-      <strong>Browser User & Version:</strong> ${browserForm}<br>
-      <strong>Time when the issue happened:</strong> ${timeForm}<br>
+      <strong>Meet ID and CFM or HMK serial number:</strong> ${meetID}<br>
+      <strong>Users Affected (#):</strong> ${usersAffected}<br>
+      <strong>Date & Time when the issue happened:</strong> ${dateTime}<br>
+      <strong>Logs from Test WebRTC tool:</strong> ${testRTC}<br>
+      <strong>Hangouts Meet Logs:</strong> ${hangLogs}<br>
+      <strong>Audio Dump Files:</strong> ${audioDump}<br>
       <strong>Problem Summary:</strong> ${problemForm}<br>
       <strong>Screenshots and HARs:</strong> ${harScreenForm}`
     });
   };
 
   return (
-    <form onSubmit={handleSubmitAdminIssue}>
+    <form onSubmit={handleSubmitAV}>
       <label className="labelForm" style={{ display: "block" }}>
         Affected Domain:{" "}
       </label>
@@ -41,40 +45,50 @@ const AdminIssueForm = () => {
         placeholder="exampledomain.com"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Domain Admin:{" "}
+        Affected Meeting ID, CFM or HMK serial number:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="domainAdmin"
-        placeholder="admin@domain.com"
+        name="meetID"
+        placeholder="meet.google.com/asd-ddd-fff"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        URL:{" "}
+        Number of users being affected and some examples:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="urlForm"
-        placeholder="admin.google.com/mail"
+        name="usersAffected"
+        placeholder="user1@domain.com; screenshot1 and user2@domain.com; screenshot 2"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Browser Type and version:{" "}
+        Date and time when the customer first experienced the issue:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="browserForm"
-        placeholder="Google Chrome ver 79.0.0.15"
+        name="dateTime"
+        placeholder="Thu, May the 25th at 9:00 AM CST"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Time Frame when Issue Occurred:{" "}
+        Test WebRTC.org output (attach here the link of the results of the
+        test):{" "}
+      </label>
+      <input className="inputForm" type="text" name="testRTC"></input>
+      <label className="labelForm" style={{ display: "block" }}>
+        Hangouts Logs (from the Meet Quality Tool or Manual logs from the
+        customer):{" "}
+      </label>
+      <input className="inputForm" type="text" name="hangLogs"></input>
+      <label className="labelForm" style={{ display: "block" }}>
+        Audio Dump files, access at chrome://webrtc-internals/{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="timeForm"
-        placeholder="9PM - 10 PM CST"
+        name="audioDump"
+        placeholder="Please tell the customer to access on a new tab at https://appr.tc/"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Problem Description:{" "}
@@ -94,11 +108,11 @@ const AdminIssueForm = () => {
         name="harScreenForm"
         placeholder="googleplex.com/kdnfkdnfkjdvk.png"
       ></input>
-      <button className="form_button" type="submit">
+      <button type="submit" className="form_button">
         Create Consult
       </button>
     </form>
   );
 };
 
-export default AdminIssueForm;
+export default AudioVideoForm;

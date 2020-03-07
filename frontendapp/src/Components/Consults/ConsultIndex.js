@@ -104,15 +104,17 @@ class ConsultIndex extends Component {
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        size="large"
-                        startIcon={<DescriptionIcon />}
-                        style={{ marginLeft: 10, marginBottom: 5 }}
-                      >
-                        Meet Consults
-                      </Button>
+                  <Link to="/consults/meet" style={{ textDecoration: "none" }}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      size="large"
+                      startIcon={<DescriptionIcon />}
+                      style={{ marginLeft: 10, marginBottom: 5 }}
+                    >
+                      Meet Consults
+                    </Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Paper>
