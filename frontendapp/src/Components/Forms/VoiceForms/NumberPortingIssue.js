@@ -4,15 +4,15 @@ import "./voiceForms.css";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-const MobileIssueForm = () => {
-  const handleSubmitMobile = e => {
+const NumberPortingIssue = () => {
+  const handleSubmitPorting = e => {
     e.preventDefault();
     const domainAffected = e.target.elements.domainAffected.value;
-    const userAffected = e.target.elements.userAffected.value;
-    const numberaffected = e.target.elements.numberaffected.value;
-    const dateTime = e.target.elements.dateTime.value;
-    const gVersion = e.target.elements.gVersion.value;
-    const OSVersion = e.target.elements.OSVersion.value;
+    const domainAdmin = e.target.elements.domainAdmin.value;
+    const orderID = e.target.elements.orderID.value;
+    const quantity = e.target.elements.quantity.value;
+    const carrierName = e.target.elements.carrierName.value;
+    const portIO = e.target.elements.portIO.value;
     const problemForm = e.target.elements.problemForm.value;
     const harScreenForm = e.target.elements.harScreenForm.value;
 
@@ -21,18 +21,18 @@ const MobileIssueForm = () => {
       icon: "success",
       title: "Consult Generated!",
       html: `<strong>Domain Affected: </strong> ${domainAffected}<br>
-          <strong>Username being affected:</strong> ${userAffected}<br>
-          <strong>Number of affected users:</strong> ${numberaffected}<br>
-          <strong>Date and time when the issue happened:</strong> ${dateTime}<br>
-          <strong>Google Voice Mobile App version:</strong> ${gVersion}<br>
-          <strong>Operating System Version:</strong> ${OSVersion}<br>
+          <strong>Domain Admin:</strong> ${domainAdmin}<br>
+          <strong>Google Voice order ID:</strong> ${orderID}<br>
+          <strong>Quantity of numbers being ported:</strong> ${quantity}<br>
+          <strong>Carrier name:</strong> ${carrierName}<br>
+          <strong>Is a Port In or Port Out request?</strong> ${portIO}<br>
           <strong>Problem Summary:</strong> ${problemForm}<br>
           <strong>Screenshots and HARs:</strong> ${harScreenForm}`
     });
   };
 
   return (
-    <form onSubmit={handleSubmitMobile}>
+    <form onSubmit={handleSubmitPorting}>
       <label className="labelForm" style={{ display: "block" }}>
         Affected Domain:{" "}
       </label>
@@ -43,49 +43,49 @@ const MobileIssueForm = () => {
         placeholder="exampledomain.com"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Affected User:{" "}
+        Domain Admin:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="userAffected"
-        placeholder="user@domain.com"
+        name="domainAdmin"
+        placeholder="admin@domain.com"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Number of users affected:{" "}
-      </label>
-      <input
-        className="inputForm"
-        type="number"
-        name="numberaffected"
-        pattern="[0-9]*"
-      ></input>
-      <label className="labelForm" style={{ display: "block" }}>
-       Date and Time when de issue happened:{" "}
+        Order ID:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="dateTime"
-        placeholder="Wed, Mar 10th; 15:30 CST"
+        name="orderID"
+        placeholder="G0D0000000215455"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Google Voice App version:{" "}
+       Quantity of numbers for which Port Request has been submitted:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="gVersion"
-        placeholder="Version 13.45.0.11"
+        name="quantity"
+        placeholder="2 numbers (+123456789, +64 7894 5465)"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        OS and Version:{" "}
+        Carrier Name:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="OSVersion"
-        placeholder="Android 10"
+        name="carrierName"
+        placeholder="Verizon | T-Mobile"
+      ></input>
+      <label className="labelForm" style={{ display: "block" }}>
+        Port in or Port out request?{" "}
+      </label>
+      <input
+        className="inputForm"
+        type="text"
+        name="portIO"
+        placeholder="Port In request"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Problem Description:{" "}
@@ -112,4 +112,4 @@ const MobileIssueForm = () => {
   );
 };
 
-export default MobileIssueForm;
+export default NumberPortingIssue;

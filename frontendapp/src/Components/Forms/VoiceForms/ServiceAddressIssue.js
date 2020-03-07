@@ -4,15 +4,15 @@ import "./voiceForms.css";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-const MobileIssueForm = () => {
-  const handleSubmitMobile = e => {
+const ServiceAddressIssue = () => {
+  const handleSubmitAddress = e => {
     e.preventDefault();
     const domainAffected = e.target.elements.domainAffected.value;
-    const userAffected = e.target.elements.userAffected.value;
-    const numberaffected = e.target.elements.numberaffected.value;
-    const dateTime = e.target.elements.dateTime.value;
-    const gVersion = e.target.elements.gVersion.value;
-    const OSVersion = e.target.elements.OSVersion.value;
+    const error = e.target.elements.error.value;
+    const emergencyAddress = e.target.elements.emergencyAddress.value;
+    const dateService = e.target.elements.dateService.value;
+    const dateNumber = e.target.elements.dateNumber.value;
+    const dateError = e.target.elements.dateError.value;
     const problemForm = e.target.elements.problemForm.value;
     const harScreenForm = e.target.elements.harScreenForm.value;
 
@@ -21,18 +21,19 @@ const MobileIssueForm = () => {
       icon: "success",
       title: "Consult Generated!",
       html: `<strong>Domain Affected: </strong> ${domainAffected}<br>
-          <strong>Username being affected:</strong> ${userAffected}<br>
-          <strong>Number of affected users:</strong> ${numberaffected}<br>
-          <strong>Date and time when the issue happened:</strong> ${dateTime}<br>
-          <strong>Google Voice Mobile App version:</strong> ${gVersion}<br>
-          <strong>Operating System Version:</strong> ${OSVersion}<br>
-          <strong>Problem Summary:</strong> ${problemForm}<br>
-          <strong>Screenshots and HARs:</strong> ${harScreenForm}`
+      <strong>Error message received (Attach Screenshots if it's possible):</strong> ${error}<br>
+      <strong>User's Emergency Address:</strong> ${emergencyAddress}<br>
+      <strong>Date when user assigned that Service Address> ${dateService}<br>
+      <strong>Date when user assigned that number:</strong> ${dateNumber}<br>
+      <strong>Date when user experienced the error for the first time:</strong> ${dateError}<br>
+      <strong>Problem Summary:</strong> ${problemForm}<br>
+      <strong>Screenshots and HARs:</strong> ${harScreenForm}`
     });
+    console.log(domainAffected);
   };
 
   return (
-    <form onSubmit={handleSubmitMobile}>
+    <form onSubmit={handleSubmitAddress}>
       <label className="labelForm" style={{ display: "block" }}>
         Affected Domain:{" "}
       </label>
@@ -43,49 +44,58 @@ const MobileIssueForm = () => {
         placeholder="exampledomain.com"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Affected User:{" "}
+        Error Message (Screenshots if it is possible):
       </label>
       <input
         className="inputForm"
         type="text"
-        name="userAffected"
-        placeholder="user@domain.com"
+        placeholder="Service Address couldn't be verified"
+        name="error"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Number of users affected:{" "}
+        User phone number:
       </label>
       <input
         className="inputForm"
         type="number"
-        name="numberaffected"
         pattern="[0-9]*"
+        name="usersAffected"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-       Date and Time when de issue happened:{" "}
+        User's Emergency Service Address:
       </label>
       <input
         className="inputForm"
         type="text"
-        name="dateTime"
-        placeholder="Wed, Mar 10th; 15:30 CST"
+        name="emergencyAddress"
+        placeholder="10001, Lake Place FL 4562, USA"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Google Voice App version:{" "}
+        Date when the Service Address was assigned:
       </label>
       <input
         className="inputForm"
         type="text"
-        name="gVersion"
-        placeholder="Version 13.45.0.11"
+        name="dateService"
+        placeholder="Wed, Mar 10th"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        OS and Version:{" "}
+        Date when the number was associated to the user:
       </label>
       <input
         className="inputForm"
         type="text"
-        name="OSVersion"
-        placeholder="Android 10"
+        placeholder="Wed, Mar 10th"
+        name="dateNumber"
+      ></input>
+      <label className="labelForm" style={{ display: "block" }}>
+        Date when the user first experienced the error message:
+      </label>
+      <input
+        className="inputForm"
+        type="text"
+        name="dateError"
+        placeholder="Wed, Mar 10th"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Problem Description:{" "}
@@ -112,4 +122,4 @@ const MobileIssueForm = () => {
   );
 };
 
-export default MobileIssueForm;
+export default ServiceAddressIssue;

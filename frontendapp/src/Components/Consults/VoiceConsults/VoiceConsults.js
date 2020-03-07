@@ -19,6 +19,12 @@ import AudioQualityForm from "../../Forms/VoiceForms/AudioQualityForm";
 import DeskPhoneForm from "../../Forms/VoiceForms/DeskPhoneForm";
 import FormalComplaintForm from "../../Forms/VoiceForms/FormalComplaintForm";
 import AAForm from "../../Forms/VoiceForms/AAForm";
+import MobileIssueForm from "../../Forms/VoiceForms/MobileIssueForm";
+import NumberPortingIssue from "../../Forms/VoiceForms/NumberPortingIssue";
+import PlacingCallsForm from "../../Forms/VoiceForms/PlacingCallsForm";
+import TextMessagingIssues from "../../Forms/VoiceForms/TextMessagingIssues";
+import ServiceAddressIssue from "../../Forms/VoiceForms/ServiceAddressIssue";
+import WebIssueForm from "../../Forms/VoiceForms/WebIssuesForm";
 
 const styles = {
   Paper: {
@@ -147,7 +153,8 @@ const VoiceConsults = () => {
                 Formal Complaint
               </Typography>
               <Typography className={classes.secondaryHeading}>
-                Report some complaints about the product usage, capabilities or limitations.
+                Report some complaints about the product usage, capabilities or
+                limitations.
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
@@ -167,15 +174,18 @@ const VoiceConsults = () => {
               aria-controls="panel5h-content"
               id="panel5bh-header"
             >
-              <Typography className={classes.heading}>Auto Attendant Issues</Typography>
+              <Typography className={classes.heading}>
+                Auto Attendant Issues
+              </Typography>
               <Typography className={classes.secondaryHeading}>
-                Report problems related to Auto Attendants / Calls placed to an Auto Attendant.
+                Report problems related to Auto Attendants / Calls placed to an
+                Auto Attendant.
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
-                    <AAForm></AAForm>
+                  <AAForm></AAForm>
                 </Paper>
               </Grid>
             </ExpansionPanelDetails>
@@ -187,9 +197,11 @@ const VoiceConsults = () => {
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel6h-content"
-              id="panel5bh-header"
+              id="panel6bh-header"
             >
-              <Typography className={classes.heading}>Mobile Issues (Voice Mail Playback)</Typography>
+              <Typography className={classes.heading}>
+                Mobile Issues (Voice Mail Playback)
+              </Typography>
               <Typography className={classes.secondaryHeading}>
                 Report problems related to Google Voice Mobile App.
               </Typography>
@@ -197,7 +209,131 @@ const VoiceConsults = () => {
             <ExpansionPanelDetails>
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
-                    <AAForm></AAForm>
+                  <MobileIssueForm></MobileIssueForm>
+                </Paper>
+              </Grid>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            expanded={expanded === "panel7"}
+            onChange={handleChange("panel7")}
+          >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel7h-content"
+              id="panel7bh-header"
+            >
+              <Typography className={classes.heading}>
+                Number Porting Issue
+              </Typography>
+              <Typography className={classes.secondaryHeading}>
+                We use this template when there are orders who are stuck or are
+                giving errors when we trying to perform the Port Process.
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <NumberPortingIssue></NumberPortingIssue>
+                </Paper>
+              </Grid>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            expanded={expanded === "panel8"}
+            onChange={handleChange("panel8")}
+          >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel8h-content"
+              id="panel8bh-header"
+            >
+              <Typography className={classes.heading}>
+                Placing Calls, Receiving or Forwarding
+              </Typography>
+              <Typography className={classes.secondaryHeading}>
+                We use this template when there are issues making calls from one
+                endpoint to another.
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <PlacingCallsForm></PlacingCallsForm>
+                </Paper>
+              </Grid>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            expanded={expanded === "panel9"}
+            onChange={handleChange("panel9")}
+          >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel9h-content"
+              id="panel9bh-header"
+            >
+              <Typography className={classes.heading}>
+                Text Messaging Issues
+              </Typography>
+              <Typography className={classes.secondaryHeading}>
+                We use this template when there are issues sending text messages
+                from one endpoint to another.
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <TextMessagingIssues></TextMessagingIssues>
+                </Paper>
+              </Grid>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            expanded={expanded === "panel10"}
+            onChange={handleChange("panel10")}
+          >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel10h-content"
+              id="panel10bh-header"
+            >
+              <Typography className={classes.heading}>
+                Service Address Verification Issues
+              </Typography>
+              <Typography className={classes.secondaryHeading}>
+                We use this template when there are issues verifying service
+                addresses provided by users in the Admin Console.
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <ServiceAddressIssue></ServiceAddressIssue>
+                </Paper>
+              </Grid>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            expanded={expanded === "panel11"}
+            onChange={handleChange("panel11")}
+          >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel11h-content"
+              id="panel11bh-header"
+            >
+              <Typography className={classes.heading}>
+                Web App Desktop Issues / Voicemail Playback
+              </Typography>
+              <Typography className={classes.secondaryHeading}>
+              Report problems related to Google Voice Web App
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <WebIssueForm></WebIssueForm>
                 </Paper>
               </Grid>
             </ExpansionPanelDetails>

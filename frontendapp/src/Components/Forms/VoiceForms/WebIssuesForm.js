@@ -4,14 +4,14 @@ import "./voiceForms.css";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-const MobileIssueForm = () => {
-  const handleSubmitMobile = e => {
+const WebIssueForm = () => {
+  const handleSubmitWeb = e => {
     e.preventDefault();
     const domainAffected = e.target.elements.domainAffected.value;
     const userAffected = e.target.elements.userAffected.value;
     const numberaffected = e.target.elements.numberaffected.value;
     const dateTime = e.target.elements.dateTime.value;
-    const gVersion = e.target.elements.gVersion.value;
+    const wVersion = e.target.elements.wVersion.value;
     const OSVersion = e.target.elements.OSVersion.value;
     const problemForm = e.target.elements.problemForm.value;
     const harScreenForm = e.target.elements.harScreenForm.value;
@@ -24,7 +24,7 @@ const MobileIssueForm = () => {
           <strong>Username being affected:</strong> ${userAffected}<br>
           <strong>Number of affected users:</strong> ${numberaffected}<br>
           <strong>Date and time when the issue happened:</strong> ${dateTime}<br>
-          <strong>Google Voice Mobile App version:</strong> ${gVersion}<br>
+          <strong>Web Broswer Used and Version:</strong> ${wVersion}<br>
           <strong>Operating System Version:</strong> ${OSVersion}<br>
           <strong>Problem Summary:</strong> ${problemForm}<br>
           <strong>Screenshots and HARs:</strong> ${harScreenForm}`
@@ -32,7 +32,7 @@ const MobileIssueForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmitMobile}>
+    <form onSubmit={handleSubmitWeb}>
       <label className="labelForm" style={{ display: "block" }}>
         Affected Domain:{" "}
       </label>
@@ -70,13 +70,13 @@ const MobileIssueForm = () => {
         placeholder="Wed, Mar 10th; 15:30 CST"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Google Voice App version:{" "}
+        Web Browser version:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="gVersion"
-        placeholder="Version 13.45.0.11"
+        name="wVersion"
+        placeholder="Google Chrome 79.0.0.0"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         OS and Version:{" "}
@@ -85,7 +85,7 @@ const MobileIssueForm = () => {
         className="inputForm"
         type="text"
         name="OSVersion"
-        placeholder="Android 10"
+        placeholder="Windows 10 Home"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Problem Description:{" "}
@@ -112,4 +112,4 @@ const MobileIssueForm = () => {
   );
 };
 
-export default MobileIssueForm;
+export default WebIssueForm;
