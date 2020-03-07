@@ -1,20 +1,62 @@
 import React from "react";
 import "./voiceForms.css";
+//Import Alertify
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
-const AudioQualityForm = props => {
+const AudioQualityForm = () => {
+  const handleSubmitAudioQuality = e => {
+    e.preventDefault();
+    const domainAffected = e.target.elements.domainAffected.value;
+    const gvNumber = e.target.elements.gvNumber.value;
+    const usersAffected = e.target.elements.usersAffected.value;
+    const dateTimeForm = e.target.elements.dateTimeForm.value;
+    const clientForm = e.target.elements.clientForm.value;
+    const otherNumber = e.target.elements.otherNumber.value;
+    const callDirection = e.target.elements.callDirection.value;
+    const callSamples = e.target.elements.callSamples.value;
+    const mobileApp = e.target.elements.mobileApp.value;
+    const webApp = e.target.elements.webApp.value;
+    const wifiMobile = e.target.elements.wifiMobile.value;
+    const portedNumber = e.target.elements.portedNumber.value;
+    const problemForm = e.target.elements.problemForm.value;
+    const harScreenForm = e.target.elements.harScreenForm.value;
+
+    Swal.fire({
+      position: "top",
+      icon: "success",
+      title: "Consult Generated!",
+      html: `<strong>Domain Affected: </strong> ${domainAffected}<br>
+      <strong>Google Voice Number:</strong> ${gvNumber}<br>
+      <strong>Users Affected (#):</strong> ${usersAffected}<br>
+      <strong>Date & Time when the issue happened:</strong> ${dateTimeForm}<br>
+      <strong>Google Voice App that was used:</strong> ${clientForm}<br>
+      <strong>Other Numbers involved in the issue:</strong> ${otherNumber}<br>
+      <strong>Call Direction (GV-GV or non GV- GV):</strong> ${callDirection}<br>
+      <strong>Call Samples:</strong> ${callSamples}<br>
+      <strong>Version of the Mobile App (if it was used):</strong> ${mobileApp}<br>
+      <strong>Version of the Browser and OS (if it was used):</strong> ${webApp}<br>
+      <strong>WiFi or Mobile Data?:</strong> ${wifiMobile}<br>
+      <strong>Was a Ported Number?:</strong> ${portedNumber}<br>
+      <strong>Problem Summary:</strong> ${problemForm}<br>
+      <strong>Screenshots and HARs:</strong> ${harScreenForm}`
+    });
+    console.log(domainAffected);
+  };
+
   return (
-    <form onSubmit={props.handleSubmitAudioQuality}>
+    <form onSubmit={handleSubmitAudioQuality}>
       <label className="labelForm" style={{ display: "block" }}>
         Affected Domain:{" "}
       </label>
       <input
         className="inputForm"
         type="text"
-        name="domainAffectedQ"
+        name="domainAffected"
         placeholder="exampledomain.com"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Google Voice Phone:{" "}
+        Google Voice Phone:
       </label>
       <input
         className="inputForm"
@@ -23,7 +65,7 @@ const AudioQualityForm = props => {
         name="gvNumber"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Number of users affected:{" "}
+        Number of users affected:
       </label>
       <input
         className="inputForm"
@@ -32,7 +74,7 @@ const AudioQualityForm = props => {
         name="usersAffected"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Date and Time of the issue:{" "}
+        Date and Time of the issue:
       </label>
       <input
         className="inputForm"
@@ -41,7 +83,7 @@ const AudioQualityForm = props => {
         placeholder="Tue, Mar 5th; 10:00 AM GMT"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Google Voice Client:{" "}
+        Google Voice Client:
       </label>
       <input
         className="inputForm"
@@ -50,7 +92,7 @@ const AudioQualityForm = props => {
         placeholder="Google Voice Web App"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Other Number:{" "}
+        Other Number:
       </label>
       <input
         className="inputForm"
@@ -59,7 +101,7 @@ const AudioQualityForm = props => {
         name="otherNumber"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Call Direction:{" "}
+        Call Direction:
       </label>
       <input
         className="inputForm"
@@ -68,7 +110,7 @@ const AudioQualityForm = props => {
         placeholder="Between Google Voice Subscribers"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Call Samples:{" "}
+        Call Samples:
       </label>
       <input
         className="inputForm"
@@ -77,7 +119,7 @@ const AudioQualityForm = props => {
         placeholder="+123456789 at 10:00 AM CST; Tue, Mar 5th"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Mobile App Affected?{" "}
+        Mobile App Affected?
       </label>
       <input
         className="inputForm"
@@ -86,7 +128,7 @@ const AudioQualityForm = props => {
         placeholder="Version of the Mobile App"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Web App affected?{" "}
+        Web App affected?
       </label>
       <input
         className="inputForm"

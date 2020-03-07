@@ -15,10 +15,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 //Forms
 import AdminIssueForm from "../../Forms/VoiceForms/AdminIssueForm";
-import AudioQualityForm from "../../Forms/VoiceForms/AudioQualityForm";
-//Import Alertify
-import Swal from "sweetalert2/dist/sweetalert2.js";
-import "sweetalert2/src/sweetalert2.scss";
+import AudioQualityForm from '../../Forms/VoiceForms/AudioQualityForm';
 
 const styles = {
   Paper: {
@@ -43,74 +40,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const VoiceConsults = () => {
+const  VoiceConsults = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = panel => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
-  };
-
-  const handleSubmitAdminIssue = e => {
-    e.preventDefault();
-    const domainAffected = e.target.elements.domainAffected.value;
-    const domainAdmin = e.target.elements.domainAdmin.value;
-    const urlForm = e.target.elements.urlForm.value;
-    const browserForm = e.target.elements.browserForm.value;
-    const timeForm = e.target.elements.timeForm.value;
-    const problemForm = e.target.elements.problemForm.value;
-    const harScreenForm = e.target.elements.harScreenForm.value;
-
-    Swal.fire({
-      position: "top",
-      icon: "success",
-      title: "Consult Generated!",
-      html: `<strong>Domain Affected: </strong> ${domainAffected}<br>
-      <strong>Domain Admin:</strong> ${domainAdmin}<br>
-      <strong>URL Accessed:</strong> ${urlForm}<br>
-      <strong>Browser User & Version:</strong> ${browserForm}<br>
-      <strong>Time when the issue happened:</strong> ${timeForm}<br>
-      <strong>Problem Summary:</strong> ${problemForm}<br>
-      <strong>Screenshots and HARs:</strong> ${harScreenForm}`
-    });
-  };
-
-  const handleSubmitAudioQuality = e => {
-    e.preventDefault();
-    const domainAffected = e.event.elements.domainAffectedQ.value;
-    const gvNumber = e.event.elements.gvNumber.value;
-    const usersAffected = e.event.elements.usersAffected.value;
-    const dateTimeForm = e.event.elements.dateTimeForm.value;
-    const clientForm = e.event.elements.clientForm.value;
-    const otherNumber = e.event.elements.otherNumber.value;
-    const callDirection = e.event.elements.callDirection.value;
-    const callSamples = e.event.elements.callSamples.value;
-    const mobileApp = e.event.elements.mobileApp.value;
-    const webApp = e.event.elements.webApp.value;
-    const wifiMobile = e.event.elements.wifiMobile.value;
-    const portedNumber = e.event.elements.portedNumber.value;
-    const problemForm = e.target.elements.problemForm.value;
-    const harScreenForm = e.target.elements.harScreenForm.value;
-
-    Swal.fire({
-      position: "top",
-      icon: "success",
-      title: "Consult Generated!",
-      html: `<strong>Domain Affected: </strong> ${domainAffected}<br>
-      <strong>Domain Admin:</strong> ${gvNumber}<br>
-      <strong>URL Accessed:</strong> ${usersAffected}<br>
-      <strong>Browser User & Version:</strong> ${dateTimeForm}<br>
-      <strong>Time when the issue happened:</strong> ${clientForm}<br>
-      <strong>Time when the issue happened:</strong> ${otherNumber}<br>
-      <strong>Time when the issue happened:</strong> ${callDirection}<br>
-      <strong>Time when the issue happened:</strong> ${callSamples}<br>
-      <strong>Time when the issue happened:</strong> ${mobileApp}<br>
-      <strong>Time when the issue happened:</strong> ${webApp}<br>
-      <strong>Time when the issue happened:</strong> ${wifiMobile}<br>
-      <strong>Time when the issue happened:</strong> ${portedNumber}<br>
-      <strong>Problem Summary:</strong> ${problemForm}<br>
-      <strong>Screenshots and HARs:</strong> ${harScreenForm}`
-    });
   };
 
   return (
@@ -142,7 +77,6 @@ const VoiceConsults = () => {
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
                   <AdminIssueForm
-                    handleSubmit={handleSubmitAdminIssue}
                   ></AdminIssueForm>
                 </Paper>
               </Grid>
@@ -165,7 +99,7 @@ const VoiceConsults = () => {
             <ExpansionPanelDetails>
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
-                  <AudioQualityForm handleSubmitAudioQuality={handleSubmitAudioQuality}>
+                  <AudioQualityForm>
                   </AudioQualityForm>
                 </Paper>
               </Grid>
