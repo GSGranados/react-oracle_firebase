@@ -14,6 +14,8 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AudioVideoForm from "../../Forms/MeetForms/AudioVideoForm";
 import InCallChatIssues from "../../Forms/MeetForms/InCallChatIssues";
+import IssueJoining from "../../Forms/MeetForms/IssuesJoining";
+import RecordingIssues from "../../Forms/MeetForms/RecordingIssues";
 
 const styles = {
   Paper: {
@@ -103,6 +105,56 @@ const MeetConsults = () => {
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
                   <InCallChatIssues></InCallChatIssues>
+                </Paper>
+              </Grid>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            expanded={expanded === "panel3"}
+            onChange={handleChange("panel3")}
+          >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3bh-content"
+              id="panel3bh-header"
+            >
+              <Typography className={classes.heading}>
+                Issues joining a video Meeting
+              </Typography>
+              <Typography className={classes.secondaryHeading}>
+                We use this consult template when there are some users having
+                problems joining a Meeting (Meet ID not working, not letting
+                them to join or to admit users).
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <IssueJoining></IssueJoining>
+                </Paper>
+              </Grid>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            expanded={expanded === "panel4"}
+            onChange={handleChange("panel4")}
+          >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel4bh-content"
+              id="panel4bh-header"
+            >
+              <Typography className={classes.heading}>
+                Recording Issues / During or After the Meeting 
+              </Typography>
+              <Typography className={classes.secondaryHeading}>
+                  Use this consult templated when customer is facing some problems with the recording feature from Hangouts Meet
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Grid item sm={12}>
+                <Paper style={styles.Paper}>
+                  <RecordingIssues></RecordingIssues>
                 </Paper>
               </Grid>
             </ExpansionPanelDetails>
