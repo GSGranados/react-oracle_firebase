@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 //Icons
 import BugReportIcon from "@material-ui/icons/BugReport";
 import DescriptionIcon from "@material-ui/icons/Description";
-import AssessmentIcon from "@material-ui/icons/Assessment";
+import TimelineIcon from '@material-ui/icons/Timeline';
 //Card Imports
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -62,7 +62,7 @@ const Content = () => {
                   >
                     In this section you will be able to report every type of
                     issue that you experience as you stay in the magnificent RTC
-                    POD, better getting familiarized with consults...
+                    POD, better getting familiarized with consults... Those are going to be your friends.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -111,7 +111,7 @@ const Content = () => {
             <Card>
               <CardActionArea>
                 <div className="bugIcon reports">
-                  <AssessmentIcon style={styles.Icon3}></AssessmentIcon>
+                  <TimelineIcon style={styles.Icon3}></TimelineIcon>
                 </div>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -129,9 +129,11 @@ const Content = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
+              <a target="_blank" href="https://www.lucidchart.com/invitations/accept/f14fd112-e0fd-4e50-b5c9-bbde35b0f902" style={{ textDecoration: 'none' }}>
                 <Button size="medium" color="inherit">
                   Check some Reports
                 </Button>
+                </a>
               </CardActions>
             </Card>
           </Paper>

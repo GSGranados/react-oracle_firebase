@@ -12,10 +12,12 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import AudioVideoForm from "../../Forms/MeetForms/AudioVideoForm";
-import InCallChatIssues from "../../Forms/MeetForms/InCallChatIssues";
-import IssueJoining from "../../Forms/MeetForms/IssuesJoining";
-import RecordingIssues from "../../Forms/MeetForms/RecordingIssues";
+
+//Forms
+import IntegrationBot from "../../Forms/ChatForms/IntegrationBot";
+import ChatMobile from "../../Forms/ChatForms/ChatMobile";
+import ChatDesktop from "../../Forms/ChatForms/ChatDesktop";
+
 
 const styles = {
   Paper: {
@@ -40,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const MeetConsults = () => {
+const ChatConsults = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -67,18 +69,17 @@ const MeetConsults = () => {
               id="panel1bh-header"
             >
               <Typography className={classes.heading}>
-                Audio Video Media Issues during Meeting
+                Integration Bot issues.
               </Typography>
               <Typography className={classes.secondaryHeading}>
-                This is a very complex consult but it is to determine if this
-                behavior experienced by the customer is something that TSEs can
-                address on their end or not (probably not).
+                We use this template when there are some issues integrating some
+                Bots to Chat Rooms even after White Listing them.
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
-                  <AudioVideoForm></AudioVideoForm>
+                  <IntegrationBot></IntegrationBot>
                 </Paper>
               </Grid>
             </ExpansionPanelDetails>
@@ -93,17 +94,17 @@ const MeetConsults = () => {
               id="panel2bh-header"
             >
               <Typography className={classes.heading}>
-                Meetings: In-Call Chat issues during meeting
+                Hangouts Chat: Mobile Issue
               </Typography>
               <Typography className={classes.secondaryHeading}>
-                We use this template when there are some users experiencing some
-                issues with in-Call Chat and we need to identify the root cause.
+                We use this template when there are some troubles related to
+                Hangouts Chat Mobile version (usage, unexpected behaviors).
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
-                  <InCallChatIssues></InCallChatIssues>
+                  <ChatMobile></ChatMobile>
                 </Paper>
               </Grid>
             </ExpansionPanelDetails>
@@ -118,43 +119,17 @@ const MeetConsults = () => {
               id="panel3bh-header"
             >
               <Typography className={classes.heading}>
-                Issues joining a video Meeting
+                Hangouts Chat: Web/Desktop Issue
               </Typography>
               <Typography className={classes.secondaryHeading}>
-                We use this consult template when there are some users having
-                problems joining a Meeting (Meet ID not working, not letting
-                them to join or to admit users).
+                We use this template when there are some troubles related to
+                Hangouts Chat Web/Desktop version (usage, unexpected behaviors).
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Grid item sm={12}>
                 <Paper style={styles.Paper}>
-                  <IssueJoining></IssueJoining>
-                </Paper>
-              </Grid>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel
-            expanded={expanded === "panel4"}
-            onChange={handleChange("panel4")}
-          >
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel4bh-content"
-              id="panel4bh-header"
-            >
-              <Typography className={classes.heading}>
-                Recording Issues / During or After the Meeting
-              </Typography>
-              <Typography className={classes.secondaryHeading}>
-                Use this consult templated when customer is facing some problems
-                with the recording feature from Hangouts Meet
-              </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Grid item sm={12}>
-                <Paper style={styles.Paper}>
-                  <RecordingIssues></RecordingIssues>
+                    <ChatDesktop></ChatDesktop>
                 </Paper>
               </Grid>
             </ExpansionPanelDetails>
@@ -165,4 +140,4 @@ const MeetConsults = () => {
   );
 };
 
-export default MeetConsults;
+export default ChatConsults;

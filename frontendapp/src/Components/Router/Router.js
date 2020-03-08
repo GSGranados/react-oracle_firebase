@@ -4,6 +4,7 @@ import App from '../../App'
 import ConsultIndex from '../Consults/ConsultIndex'
 import VoiceConsults from '../Consults/VoiceConsults/VoiceConsults'
 import MeetConsults from '../Consults/MeetConsults/MeetConsults'
+import ChatConsults from '../Consults/ChatConsults/ChatConsults'
 
 class Router extends Component {
     render() {
@@ -16,6 +17,7 @@ class Router extends Component {
                         <Route exact path="/consults" component={ConsultIndex}></Route>
                         <Route path="/consults/voice" component={VoiceConsults}></Route>
                         <Route path="/consults/meet" component={MeetConsults}></Route>
+                        <Route path="/consults/chat" component={ChatConsults}></Route>
                         </Switch>
                     </Switch>
                 </BrowserRouter>

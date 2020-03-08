@@ -8,7 +8,6 @@ import Grid from "@material-ui/core/Grid";
 import ChatIcon from "@material-ui/icons/Chat";
 import VoiceChatIcon from "@material-ui/icons/VoiceChat";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
-import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import DescriptionIcon from "@material-ui/icons/Description";
 //Card Imports
 import Card from "@material-ui/core/Card";
@@ -42,7 +41,7 @@ class ConsultIndex extends Component {
         <Header></Header>
         <div style={{ padding: 25, marginTop: 40, marginBottom: 20 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={4} lg={4}>
               <Paper style={styles.Paper}>
                 <Card>
                   <CardActionArea>
@@ -58,29 +57,30 @@ class ConsultIndex extends Component {
                         color="textSecondary"
                         component="p"
                       >
-                        In this section you will be able to report every type of
-                        issue that you experience as you stay in the magnificent
-                        RTC POD, better getting familiarized with consults...
+                        From Calling issues, Text Messages to not being able to port a freaking number!
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                  <Link to="/consults/voice" style={{ textDecoration: "none" }}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                      startIcon={<DescriptionIcon />}
-                      style={{ marginLeft: 10, marginBottom: 5 }}
+                    <Link
+                      to="/consults/voice"
+                      style={{ textDecoration: "none" }}
                     >
-                      Voice Consults
-                    </Button>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                        startIcon={<DescriptionIcon />}
+                        style={{ marginLeft: 10, marginBottom: 5 }}
+                      >
+                        Voice Consults
+                      </Button>
                     </Link>
                   </CardActions>
                 </Card>
               </Paper>
             </Grid>
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={4} lg={4}>
               <Paper style={styles.Paper}>
                 <Card>
                   <CardActionArea>
@@ -96,30 +96,30 @@ class ConsultIndex extends Component {
                         color="textSecondary"
                         component="p"
                       >
-                        Maybe there is a lot of consults and it is a pain in the
-                        neck to go check on Support U between all the features.
-                        It is better to have them in just one place! Be
-                        cautious.
+                       Use these when you do not know what is failing (most of the time).
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                  <Link to="/consults/meet" style={{ textDecoration: "none" }}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                      startIcon={<DescriptionIcon />}
-                      style={{ marginLeft: 10, marginBottom: 5 }}
+                    <Link
+                      to="/consults/meet"
+                      style={{ textDecoration: "none" }}
                     >
-                      Meet Consults
-                    </Button>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                        startIcon={<DescriptionIcon />}
+                        style={{ marginLeft: 10, marginBottom: 5 }}
+                      >
+                        Meet Consults
+                      </Button>
                     </Link>
                   </CardActions>
                 </Card>
               </Paper>
             </Grid>
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={4} lg={4}>
               <Paper style={styles.Paper}>
                 <Card>
                   <CardActionArea>
@@ -135,60 +135,25 @@ class ConsultIndex extends Component {
                         color="textSecondary"
                         component="p"
                       >
-                        It is better to have a track of all weekly issues to see
-                        how to address them properly and incress our chances to
-                        get a good CES! So it's good to keep an eye on them.
+                        And Chat Consults, pretty handy, but nobody uses them a lot.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                      startIcon={<DescriptionIcon />}
-                      style={{ marginLeft: 10, marginBottom: 5 }}
+                    <Link
+                      to="/consults/chat"
+                      style={{ textDecoration: "none" }}
                     >
-                      Chat Consults
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <Paper style={styles.Paper}>
-                <Card>
-                  <CardActionArea>
-                    <div className="bugIcon hangoutsIcon ">
-                      <QuestionAnswerIcon
-                        style={styles.Icon}
-                      ></QuestionAnswerIcon>
-                    </div>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Google Hangouts Consult Templates
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                        startIcon={<DescriptionIcon />}
+                        style={{ marginLeft: 10, marginBottom: 5 }}
                       >
-                        It is better to have a track of all weekly issues to see
-                        how to address them properly and incress our chances to
-                        get a good CES! So it's good to keep an eye on them.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                      startIcon={<DescriptionIcon />}
-                      style={{ marginLeft: 10, marginBottom: 5 }}
-                    >
-                      Hangouts Consults
-                    </Button>
+                        Chat Consults
+                      </Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Paper>
