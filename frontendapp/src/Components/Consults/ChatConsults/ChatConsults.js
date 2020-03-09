@@ -18,6 +18,8 @@ import IntegrationBot from "../../Forms/ChatForms/IntegrationBot";
 import ChatMobile from "../../Forms/ChatForms/ChatMobile";
 import ChatDesktop from "../../Forms/ChatForms/ChatDesktop";
 
+//import navigation
+import BottomNavigation from "../../../layouts/BottomNavigation";
 
 const styles = {
   Paper: {
@@ -136,6 +138,7 @@ const ChatConsults = () => {
           </ExpansionPanel>
         </div>
       </Grid>
+      <BottomNavigation></BottomNavigation>
     </div>
   );
 };

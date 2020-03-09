@@ -17,6 +17,9 @@ import InCallChatIssues from "../../Forms/MeetForms/InCallChatIssues";
 import IssueJoining from "../../Forms/MeetForms/IssuesJoining";
 import RecordingIssues from "../../Forms/MeetForms/RecordingIssues";
 
+//import navigation
+import BottomNavigation from "../../../layouts/BottomNavigation";
+
 const styles = {
   Paper: {
     padding: 20,
@@ -161,6 +164,7 @@ const MeetConsults = () => {
           </ExpansionPanel>
         </div>
       </Grid>
+      <BottomNavigation></BottomNavigation>
     </div>
   );
 };

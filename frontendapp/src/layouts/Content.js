@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 //Icons
 import BugReportIcon from "@material-ui/icons/BugReport";
 import DescriptionIcon from "@material-ui/icons/Description";
-import TimelineIcon from '@material-ui/icons/Timeline';
+import TimelineIcon from "@material-ui/icons/Timeline";
 //Card Imports
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -53,7 +53,7 @@ const Content = () => {
                 </div>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    RTC Issues
+                    RTC Issues.
                   </Typography>
                   <Typography
                     variant="body2"
@@ -62,7 +62,8 @@ const Content = () => {
                   >
                     In this section you will be able to report every type of
                     issue that you experience as you stay in the magnificent RTC
-                    POD, better getting familiarized with consults... Those are going to be your friends.
+                    POD, better getting familiarized with consults... Those are
+                    good.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -83,7 +84,7 @@ const Content = () => {
                 </div>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Consult Generator
+                    Consult Generator.
                   </Typography>
                   <Typography
                     variant="body2"
@@ -92,12 +93,13 @@ const Content = () => {
                   >
                     Maybe there is a lot of consults and it is a pain in the
                     neck to go check on Support U between all the features. It
-                    is better to have them in just one place! Better be cautious.
+                    is better to have them in just one place! Better be
+                    a cautious agent.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link to="/consults" style={{ textDecoration: 'none' }}>
+                <Link to="/consults" style={{ textDecoration: "none" }}>
                   <Button size="medium" color="primary">
                     Create a new Consult
                   </Button>
@@ -115,25 +117,27 @@ const Content = () => {
                 </div>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Reports
+                    Decision Tree.
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    It is better to have a track of all weekly issues to see how
-                    to address them properly and incress our chances to get a
-                    good CES! So it's good to keep an eye on them.
+                    To have a better handling in all of this RTC cases, you
+                    should have a path to follow in order to make every
+                    interaction easy, make you look knowledgeable and get some good CES!
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-              <a target="_blank" href="https://www.lucidchart.com/invitations/accept/f14fd112-e0fd-4e50-b5c9-bbde35b0f902" style={{ textDecoration: 'none' }}>
-                <Button size="medium" color="inherit">
-                  Check some Reports
-                </Button>
-                </a>
+                <Link
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button size="medium" color="inherit">
+                    Check some Reports
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Paper>

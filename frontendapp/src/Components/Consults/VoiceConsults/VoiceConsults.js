@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../../layouts/Header";
+import BottomNavigation from "../../../layouts/BottomNavigation";
 
 //Content Management
 import { Paper } from "@material-ui/core";
@@ -340,6 +341,7 @@ const VoiceConsults = () => {
           </ExpansionPanel>
         </div>
       </Grid>
+      <BottomNavigation></BottomNavigation>
     </div>
   );
 };

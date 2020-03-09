@@ -57,7 +57,7 @@ class ConsultIndex extends Component {
                         color="textSecondary"
                         component="p"
                       >
-                        From Calling issues, Text Messages to not being able to port a freaking number!
+                        From Calling issues, Txt Mssgs to not being able to port a freaking number!
                       </Typography>
                     </CardContent>
                   </CardActionArea>
@@ -135,7 +135,7 @@ class ConsultIndex extends Component {
                         color="textSecondary"
                         component="p"
                       >
-                        And Chat Consults, pretty handy, but nobody uses them a lot.
+                        And Chat Consults, pretty handy, but nobody uses them a lot. Poor them.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
