@@ -72,8 +72,7 @@ const DeskPhoneForm = () => {
       </label>
       <input
         className="inputForm"
-        type="number"
-        pattern ="[0-9]*"
+        type="text"
         name="numberUser"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>

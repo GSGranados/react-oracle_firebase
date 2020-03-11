@@ -52,12 +52,11 @@ const TextMessagingIssues = () => {
         placeholder="exampledomain.com"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
-        Google Voice Phone:
+        Google Voice Phone Number:
       </label>
       <input
         className="inputForm"
-        type="number"
-        pattern="[0-9]*"
+        type="text"
         name="gvNumber"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
@@ -92,8 +91,7 @@ const TextMessagingIssues = () => {
       </label>
       <input
         className="inputForm"
-        type="number"
-        pattern="[0-9]*"
+        type="text"
         name="otherNumber"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>

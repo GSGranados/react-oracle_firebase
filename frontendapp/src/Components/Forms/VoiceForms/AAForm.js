@@ -54,8 +54,7 @@ const AAForm = () => {
       </label>
       <input
         className="inputForm"
-        type="number"
-        pattern="[0-9]*"
+        type="text"
         name="aANumber"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>

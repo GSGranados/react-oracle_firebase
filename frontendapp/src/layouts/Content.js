@@ -68,9 +68,11 @@ const Content = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="medium" color="secondary">
-                  File a New Issue
-                </Button>
+                <Link to="/issues" style={{ textDecoration: "none" }} >
+                  <Button size="medium" color="secondary">
+                    File a New Issue
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Paper>
@@ -94,7 +96,7 @@ const Content = () => {
                     Maybe there is a lot of consults and it is a pain in the
                     neck to go check on Support U between all the features. It
                     is better to have them in just one place! Better be
-                    a cautious agent.
+                    cautious.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -126,14 +128,13 @@ const Content = () => {
                   >
                     To have a better handling in all of this RTC cases, you
                     should have a path to follow in order to make every
-                    interaction easy, make you look knowledgeable and get some good CES!
+                    interaction easy, make you look knowledgeable and get some
+                    CES!
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link
-                  style={{ textDecoration: "none" }}
-                >
+                <Link style={{ textDecoration: "none" }}>
                   <Button size="medium" color="inherit">
                     Check some Reports
                   </Button>

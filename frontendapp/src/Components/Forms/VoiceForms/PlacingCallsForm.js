@@ -92,8 +92,7 @@ const PlacingCallsForm = () => {
       </label>
       <input
         className="inputForm"
-        type="number"
-        pattern="[0-9]*"
+        type="text"
         name="otherNumber"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>

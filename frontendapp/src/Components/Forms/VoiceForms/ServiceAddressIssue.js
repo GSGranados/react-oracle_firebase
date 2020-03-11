@@ -57,8 +57,7 @@ const ServiceAddressIssue = () => {
       </label>
       <input
         className="inputForm"
-        type="number"
-        pattern="[0-9]*"
+        type="text"
         name="usersAffected"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
