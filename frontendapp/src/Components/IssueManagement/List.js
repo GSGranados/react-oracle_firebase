@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import Header from "../../layouts/Header";
 import { Grid, Paper } from "@material-ui/core";
 import firebase from "../../Firebase/Firebase";
+import TableList from "./TableList";
+
+const styles = {
+  Paper: {
+    padding: 20,
+    marginTop: 10,
+    marginBottom: 10
+  }
+};
 
 export default class List extends Component {
   constructor(props) {
@@ -12,6 +21,8 @@ export default class List extends Component {
       issues: []
     };
   }
+
+  //GETTING ALL DATA FROM FIREBASE
 
   onCollectionUpdate = querySnapshot => {
     const issues = [];
@@ -40,7 +51,10 @@ export default class List extends Component {
 
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
+    
   }
+
+  
 
   render() {
     return (
@@ -48,18 +62,8 @@ export default class List extends Component {
         <Header></Header>
         <Grid container spacing={2}>
           <Grid item sm={12}>
-            <Paper>
-              {this.state.issues.map(issue => (
-                <div key={issue.key}>
-                    <p>{issue.key}</p>
-                  <p>{issue.pfi_tag}</p>
-                  <p>{issue.product}</p>
-                  <p>{issue.subject}</p>
-                  <p>{issue.support_article}</p>
-                  <p>{issue.troubleshoot_steps}</p>
-                  <br></br>
-                </div>
-              ))}
+            <Paper style={styles.Paper}>
+              <TableList  issues={this.state.issues}></TableList>
             </Paper>
           </Grid>
         </Grid>
