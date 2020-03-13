@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Header from "../../layouts/Header";
-import { Grid, Paper } from "@material-ui/core";
+import { Grid, Paper} from "@material-ui/core";
 import firebase from "../../Firebase/Firebase";
 import TableList from "./TableList";
+import {Link} from 'react-router-dom';
 
 const styles = {
   Paper: {
@@ -64,7 +65,11 @@ export default class List extends Component {
           <Grid item sm={12}>
             <Paper style={styles.Paper}>
               <TableList  issues={this.state.issues}></TableList>
+              <Link to="/issues/create" className="btn btn-info">
+                File a new Issue
+              </Link>
             </Paper>
+            
           </Grid>
         </Grid>
       </div>
