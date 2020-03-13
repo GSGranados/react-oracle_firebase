@@ -1,6 +1,5 @@
 import * as firebase from 'firebase';
 
-const settings = {timestampsInSnapshots: true};
 
 var firebaseConfig = {
     apiKey: "AIzaSyAwcYPJr9NksDhvR2QtmRAhsndMZ9wv8ZA",
@@ -13,6 +12,5 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.firestore().settings(settings);
 
   export default firebase;
