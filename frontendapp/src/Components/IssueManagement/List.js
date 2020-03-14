@@ -29,6 +29,7 @@ export default class List extends Component {
     const issues = [];
     querySnapshot.forEach(doc => {
       const {
+        case_number,
         pfi_tag,
         product,
         subject,
@@ -38,6 +39,7 @@ export default class List extends Component {
       issues.push({
         key: doc.id,
         doc, // DocumentSnapshot
+        case_number,
         pfi_tag,
         product,
         subject,
