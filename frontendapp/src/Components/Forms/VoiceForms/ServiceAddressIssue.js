@@ -59,6 +59,7 @@ const ServiceAddressIssue = () => {
         className="inputForm"
         type="text"
         name="usersAffected"
+        placeholder="+123456789"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         User's Emergency Service Address:

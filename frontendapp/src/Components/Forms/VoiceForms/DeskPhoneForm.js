@@ -74,6 +74,7 @@ const DeskPhoneForm = () => {
         className="inputForm"
         type="text"
         name="numberUser"
+        placeholder="+123456789"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Problem Description:{" "}

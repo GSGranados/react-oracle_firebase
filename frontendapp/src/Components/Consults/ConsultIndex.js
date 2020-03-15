@@ -57,7 +57,8 @@ class ConsultIndex extends Component {
                         color="textSecondary"
                         component="p"
                       >
-                        From Calling issues, Txt Mssgs to not being able to port a freaking number!
+                        From Calling issues, Txt Mssgs to not being able to port
+                        a freaking number!
                       </Typography>
                     </CardContent>
                   </CardActionArea>
@@ -96,7 +97,8 @@ class ConsultIndex extends Component {
                         color="textSecondary"
                         component="p"
                       >
-                       Use these when you do not know what is failing (most of the time).
+                        Use these when you do not know what is failing (most of
+                        the time).
                       </Typography>
                     </CardContent>
                   </CardActionArea>
@@ -135,7 +137,8 @@ class ConsultIndex extends Component {
                         color="textSecondary"
                         component="p"
                       >
-                        And Chat Consults, pretty handy, but nobody uses them a lot. Poor them.
+                        And Chat Consults, pretty handy, but nobody uses them a
+                        lot. Poor them.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
@@ -158,6 +161,16 @@ class ConsultIndex extends Component {
                 </Card>
               </Paper>
             </Grid>
+            <Link
+              to="/"
+              className="btn btn-warning"
+              style={{ marginRight: 10 }}
+            >
+              Go back home
+            </Link>
+            <Link to="/issues" className="btn btn-success">
+              File a new issue
+            </Link>
           </Grid>
         </div>
       </>

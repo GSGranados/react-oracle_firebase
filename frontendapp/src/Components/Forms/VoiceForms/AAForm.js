@@ -56,6 +56,7 @@ const AAForm = () => {
         className="inputForm"
         type="text"
         name="aANumber"
+        placeholder="+123456789"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Caller # and origin (optional):
@@ -107,9 +108,9 @@ const AAForm = () => {
       </label>
       <input
         className="inputForm"
-        type="number"
-        pattern="[0-9]*"
+        type="text"
         name="otherNumber"
+        placeholder="+123456789"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Menu Configuration Issue Description:

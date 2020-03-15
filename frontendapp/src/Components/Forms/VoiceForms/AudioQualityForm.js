@@ -60,9 +60,9 @@ const AudioQualityForm = () => {
       </label>
       <input
         className="inputForm"
-        type="number"
-        pattern="[0-9]*"
+        type="text"
         name="gvNumber"
+        placeholder="+123456789"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Number of users affected:
@@ -98,6 +98,7 @@ const AudioQualityForm = () => {
         className="inputForm"
         type="text"
         name="otherNumber"
+        placeholder="+123456789"
       ></input>
       <label className="labelForm" style={{ display: "block" }}>
         Call Direction:

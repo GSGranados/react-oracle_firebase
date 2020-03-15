@@ -67,8 +67,14 @@ export default class List extends Component {
           <Grid item sm={12}>
             <Paper style={styles.Paper}>
               <TableList  issues={this.state.issues}></TableList>
-              <Link to="/issues/create" className="btn btn-info">
+              <Link to="/issues/create" className="btn btn-info" style={{marginRight: 10}}>
                 File a new Issue
+              </Link>
+              <Link to="/" className="btn btn-warning" style={{marginRight: 10}}>
+                Go back home
+              </Link>
+              <Link to="/consults" className="btn btn-success">
+                Create a new consult
               </Link>
             </Paper>
             
