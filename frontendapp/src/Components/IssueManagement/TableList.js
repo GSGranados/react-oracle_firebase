@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 //import firebase
 import firebase from "../../Firebase/Firebase";
@@ -12,10 +12,13 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
-const TableList = props => {
-  console.log(props.issues);
-  return (
-    <>
+
+export default class TableList extends Component {
+
+  render() {
+    
+    return (
+      <>
       <div>
         <table className="table">
           <thead className="thead-dark">
@@ -29,7 +32,7 @@ const TableList = props => {
             </tr>
           </thead>
           <tbody>
-            {props.issues.map(issue => {
+            {this.props.issues.map(issue => {
               return (
                 <tr key={issue.key}>
                   <th scope="row">{issue.case_number}</th>
@@ -44,7 +47,7 @@ const TableList = props => {
                     >
                       <EditIcon style={{ marginRight: 5 }}></EditIcon>
                     </Link>
-                    <Link
+                    <Link to="/issues"
                       onClick={() => {
                         Swal.fire({
                           title: "Delete this issue?",
@@ -99,6 +102,5 @@ const TableList = props => {
       </div>
     </>
   );
-};
-
-export default TableList;
+  }
+}

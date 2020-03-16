@@ -134,14 +134,15 @@ const Content = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link style={{ textDecoration: "none" }}>
                   <Button size="medium" color="inherit">
                     Check some Reports
                   </Button>
-                </Link>
               </CardActions>
             </Card>
           </Paper>
+        </Grid>
+        <Grid item sm={12} style={{textAlign: "center"}}>
+          <i>"Thank you for letting me be part of a fantastic team but most important, a fantastic group of friends. Be brave, be fearless and be strong... AUUU" - S</i>
         </Grid>
       </Grid>
     </div>

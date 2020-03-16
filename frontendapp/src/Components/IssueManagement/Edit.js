@@ -14,7 +14,7 @@ export default class Edit extends Component {
     super();
     this.ref = firebase.firestore().collection("issues");
     this.state = {
-      case_number: null,
+      case_number: "",
       pfi_tag: "",
       product: "",
       subject: "",
@@ -170,7 +170,7 @@ export default class Edit extends Component {
                         <label htmlFor="troubleshoot_steps">
                           Troubleshoot Steps Taken:
                         </label>
-                        <textArea
+                        <textarea
                           className="form-control"
                           name="troubleshoot_steps"
                           onChange={this.onChange}
@@ -179,16 +179,16 @@ export default class Edit extends Component {
                           cols="80"
                           rows="3"
                         >
-                        </textArea>
+                        </textarea>
                       </div>
                       <button
                         style={{ marginRight: 10 }}
                         type="submit"
-                        class="btn btn-warning"
+                        className="btn btn-warning"
                       >
                         Update Issue
                       </button>
-                      <Link to="/issues" class="btn btn-primary">
+                      <Link to="/issues" className="btn btn-primary">
                         Get back to Issue List
                       </Link>
                     </form>

@@ -15,7 +15,7 @@ export default class CreateIssue extends Component {
     super();
     this.ref = firebase.firestore().collection("issues");
     this.state = {
-      case_number: null,
+      case_number: "",
       pfi_tag: "",
       product: "",
       subject: "",
@@ -151,21 +151,21 @@ export default class CreateIssue extends Component {
                     </div>
                     <div className="form-group">
                       <label htmlFor="troubleshoot_steps">Troubleshoot Steps Taken:</label>
-                      <textArea
+                      <textarea
                         className="form-control"
                         name="troubleshoot_steps"
                         onChange={this.onChange}
                         placeholder="Incognito window tried and behavior still persists"
                         cols="80"
                         rows="3"
+                        value={troubleshoot_steps}
                       >
-                        {troubleshoot_steps}
-                      </textArea>
+                      </textarea>
                     </div>
-                    <button style={{marginRight: 10}} type="submit" class="btn btn-success">
+                    <button style={{marginRight: 10}} type="submit" className="btn btn-success">
                       File a new issue
                     </button>
-                    <Link to="/issues" class="btn btn-primary">
+                    <Link to="/issues" className="btn btn-primary">
                       Get back to Issue List
                     </Link>
                   </form>
