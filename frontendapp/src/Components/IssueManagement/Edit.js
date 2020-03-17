@@ -110,7 +110,7 @@ export default class Edit extends Component {
                   <div className="panel-body">
                     <form onSubmit={this.onSubmit}>
                       <div className="form-group">
-                        <label htmlFor="title">Case number:</label>
+                        <label htmlFor="case_number">Case number:</label>
                         <input
                           type="number"
                           className="form-control"
