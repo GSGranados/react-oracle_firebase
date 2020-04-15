@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 //import firebase
 import firebase from "../../Firebase/Firebase";
@@ -24,6 +24,7 @@ export default class TableList extends Component {
     };
   }
 
+  //Filter function - takes the value of the input field and changes its state
   updateSearch(event) {
     event.preventDefault();
     this.setState({
@@ -32,6 +33,7 @@ export default class TableList extends Component {
   }
 
   render() {
+    //Filter issues
     let filteredIssues = this.props.issues.filter(issue => {
       return (
         issue.case_number.indexOf(this.state.search) !== -1 ||
@@ -43,10 +45,12 @@ export default class TableList extends Component {
             -1
       );
     });
+
+
     return (
       <>
         <div>
-          <Grid container spacing={12}>
+          <Grid container spacing={2}>
             <Grid item sm={12}>
               <form>
               <div className="form-group">

@@ -76,8 +76,7 @@ export default class List extends Component {
               <Link to="/consults" className="btn btn-success">
                 Create a new consult
               </Link>
-            </Paper>
-            
+            </Paper>         
           </Grid>
         </Grid>
       </div>
